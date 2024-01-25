@@ -124,7 +124,8 @@ render() {
           <div className="card p-3">
             <div className="center">
               <button onClick={this.createItem} className="btn btn-primary">Add task</button>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFAdnvHXXiw1c4Bx7dflm76JJheOBq03_Alw&usqp=CAU" width="10%"/>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFAdnvHXXiw1c4Bx7dflm76JJheOBq03_Alw&usqp=CAU" width="10%"
+              alt="A tick"/>
             </div>
             <div className="center">
             {this.renderTabList()}
