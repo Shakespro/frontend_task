@@ -24,7 +24,7 @@ componentDidMount() {
 
 refreshList = () => {
   axios
-    .get("34.16.130.101/api/tasks/")
+    .get("http://localhost:8000/api/tasks/")
     .then(res => this.setState({ taskList: res.data }))
     .catch(err => console.log(err));
 };
@@ -90,17 +90,17 @@ handleSubmit = item => {
   this.toggle();
   if (item.id) {
     axios
-      .put(`34.16.130.101/api/tasks/${item.id}/`, item)
+      .put(`http://localhost:8000/api/tasks/${item.id}/`, item)
       .then(res => this.refreshList());
   }
   axios
-  .post("34.16.130.101/api/tasks/", item)
+  .post("http://localhost:8000/api/tasks/", item)
   .then(res => this.refreshList());
 };
 
 handleDelete = item => {
   axios
-  .delete(`34.16.130.101/api/tasks/${item.id}/`, item)
+  .delete(`http://localhost:8000/api/tasks/${item.id}/`, item)
   .then(res => this.refreshList());
 };
 
