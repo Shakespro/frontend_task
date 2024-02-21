@@ -24,7 +24,7 @@ componentDidMount() {
 
 refreshList = () => {
   axios
-    .get("http://localhost:8000/api/tasks/")
+    .get("https://backend-taska-5.onrender.com/api/tasks/")
     .then(res => this.setState({ taskList: res.data }))
     .catch(err => console.log(err));
 };
@@ -90,17 +90,17 @@ handleSubmit = item => {
   this.toggle();
   if (item.id) {
     axios
-      .put(`http://localhost:8000/api/tasks/${item.id}/`, item)
+      .put(`https://backend-taska-5.onrender.com/api/tasks/${item.id}/`, item)
       .then(res => this.refreshList());
   }
   axios
-  .post("http://localhost:8000/api/tasks/", item)
+  .post("https://backend-taska-5.onrender.com/api/tasks/", item)
   .then(res => this.refreshList());
 };
 
 handleDelete = item => {
   axios
-  .delete(`http://localhost:8000/api/tasks/${item.id}/`, item)
+  .delete(`https://backend-taska-5.onrender.com/api/tasks/${item.id}/`, item)
   .then(res => this.refreshList());
 };
 
